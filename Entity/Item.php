@@ -465,4 +465,32 @@ class Item
     {
         return $this->parent;
     }
+    /**
+     * @var string $url
+     */
+    private $url;
+
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return Item
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
 }
