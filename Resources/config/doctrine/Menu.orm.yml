@@ -51,4 +51,4 @@ Zorbus\MenuBundle\Entity\Menu:
             targetEntity: Zorbus\MenuBundle\Entity\Item
             mappedBy: menu
             orderBy:
-                name: ASC
+                position: ASC
