@@ -1,0 +1,92 @@
+Zorbus\MenuBundle\Entity\Item:
+    type: entity
+    table: zorbus_menu_item
+    repositoryClass: Zorbus\MenuBundle\Entity\ItemRepository
+    gedmo:
+        tree:
+            type: nested
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: false
+        description:
+            type: text
+            nullable: true
+        image:
+            type: string
+            length: 255
+            nullable: true
+        enabled:
+            type: boolean
+            default: true
+            nullable: true
+        lft:
+            type: integer
+            gedmo:
+                - treeLeft
+        rgt:
+            type: integer
+            gedmo:
+                - treeRight
+        root:
+            type: integer
+            nullable: true
+            gedmo:
+                - treeRoot
+        lvl:
+            type: integer
+            gedmo:
+                - treeLevel
+        user_id:
+            type: integer
+            nullable: true
+        slug:
+            type: string
+            length: 255
+            nullable: true
+            gedmo:
+                slug:
+                    separator: '-'
+                    style: default
+                    fields:
+                        - name
+        created_at:
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+    manyToOne:
+        menu:
+            targetEntity: Zorbus\MenuBundle\Entity\Menu
+            inversedBy: items
+            joinColumn:
+                name: menu_id
+                referencedColumnName: id
+                onDelete: CASCADE
+        parent:
+            targetEntity: Zorbus\MenuBundle\Entity\Item
+            inversedBy: children
+            joinColumn:
+                name: parent_id
+                referencedColumnName: id
+                onDelete: SET NULL
+            gedmo:
+                - treeParent
+    oneToMany:
+        children:
+            targetEntity: Zorbus\MenuBundle\Entity\Item
+            mappedBy: parent
+            orderBy:
+                lft: ASC

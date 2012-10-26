@@ -1,0 +1,54 @@
+Zorbus\MenuBundle\Entity\Menu:
+    type: entity
+    table: zorbus_menu_menu
+    repositoryClass: Zorbus\MenuBundle\Entity\MenuRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        identifier:
+            type: string
+            length: 255
+            nullable: false
+        title:
+            type: string
+            length: 255
+            nullable: false
+        description:
+            type: text
+        lang:
+            type: string
+            length: 5
+            nullable: true
+            default: en_US
+        slug:
+            type: string
+            length: 255
+            gedmo:
+                slug:
+                    separator: '-'
+                    style: default
+                    fields:
+                        - title
+        enabled:
+            type: boolean
+            default: true
+            nullable: true
+        created_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            gedmo:
+                timestampable:
+                    on: update
+
+    oneToMany:
+        items:
+            targetEntity: Zorbus\MenuBundle\Entity\Item
+            mappedBy: menu
+            orderBy:
+                name: ASC

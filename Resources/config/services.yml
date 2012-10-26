@@ -1,0 +1,7 @@
+parameters:
+#    zorbus_menu.example.class: Zorbus\MenuBundle\Example
+
+services:
+#    zorbus_menu.example:
+#        class: %zorbus_menu.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
