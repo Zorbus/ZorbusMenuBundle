@@ -49,6 +49,12 @@ Zorbus\MenuBundle\Entity\Item:
         user_id:
             type: integer
             nullable: true
+        position:
+            type: integer
+            default: 1
+            nullable: true
+            gedmo:
+                - sortablePosition
         slug:
             type: string
             length: 255
@@ -89,6 +95,7 @@ Zorbus\MenuBundle\Entity\Item:
                 onDelete: SET NULL
             gedmo:
                 - treeParent
+                - sortableGroup
     oneToMany:
         children:
             targetEntity: Zorbus\MenuBundle\Entity\Item
