@@ -34,7 +34,7 @@ class ItemAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('name')
+            ->addIdentifier('name')
             ->addIdentifier('menu')
             ->addIdentifier('parent')
             ->add('enabled')
