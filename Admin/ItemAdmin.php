@@ -17,7 +17,7 @@ class ItemAdmin extends Admin
             ->add('menu')
             ->add('parent', null, array('required' => false))
             ->add('description')
-            ->add('image')
+            ->add('imageTemp', 'file', array('required' => false, 'label' => 'Image'))
             ->add('enabled', null, array('required' => false))
         ;
     }
@@ -48,5 +48,14 @@ class ItemAdmin extends Admin
                 ->assertMaxLength(array('limit' => 255))
             ->end()
         ;
+    }
+    public function prePersist($object)
+    {
+        $object->setUpdatedAt(new \DateTime());
+    }
+
+    public function preUpdate($object)
+    {
+        $object->setUpdatedAt(new \DateTime());
     }
 }

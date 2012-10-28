@@ -77,6 +77,12 @@ Zorbus\MenuBundle\Entity\Item:
             gedmo:
                 timestampable:
                     on: update
+    lifecycleCallbacks:
+        prePersist: [preImageUpload]
+        preUpdate: [preImageUpload]
+        postPersist: [postImageUpload]
+        postUpdate: [postImageUpload]
+        postRemove: [postRemove]
     manyToOne:
         menu:
             targetEntity: Zorbus\MenuBundle\Entity\Menu

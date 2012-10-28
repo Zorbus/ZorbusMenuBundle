@@ -2,11 +2,14 @@
 
 namespace Zorbus\MenuBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Zorbus\MenuBundle\Entity\Item
  */
 class Item extends Base\Item
 {
+
     /**
      * @var integer $id
      */
@@ -104,11 +107,11 @@ class Item extends Base\Item
     {
         $this->children = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -124,14 +127,14 @@ class Item extends Base\Item
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -147,14 +150,14 @@ class Item extends Base\Item
     public function setUrl($url)
     {
         $this->url = $url;
-    
+
         return $this;
     }
 
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -170,14 +173,14 @@ class Item extends Base\Item
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -193,14 +196,14 @@ class Item extends Base\Item
     public function setImage($image)
     {
         $this->image = $image;
-    
+
         return $this;
     }
 
     /**
      * Get image
      *
-     * @return string 
+     * @return string
      */
     public function getImage()
     {
@@ -216,14 +219,14 @@ class Item extends Base\Item
     public function setEnabled($enabled)
     {
         $this->enabled = $enabled;
-    
+
         return $this;
     }
 
     /**
      * Get enabled
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getEnabled()
     {
@@ -239,14 +242,14 @@ class Item extends Base\Item
     public function setLft($lft)
     {
         $this->lft = $lft;
-    
+
         return $this;
     }
 
     /**
      * Get lft
      *
-     * @return integer 
+     * @return integer
      */
     public function getLft()
     {
@@ -262,14 +265,14 @@ class Item extends Base\Item
     public function setRgt($rgt)
     {
         $this->rgt = $rgt;
-    
+
         return $this;
     }
 
     /**
      * Get rgt
      *
-     * @return integer 
+     * @return integer
      */
     public function getRgt()
     {
@@ -285,14 +288,14 @@ class Item extends Base\Item
     public function setRoot($root)
     {
         $this->root = $root;
-    
+
         return $this;
     }
 
     /**
      * Get root
      *
-     * @return integer 
+     * @return integer
      */
     public function getRoot()
     {
@@ -308,14 +311,14 @@ class Item extends Base\Item
     public function setLvl($lvl)
     {
         $this->lvl = $lvl;
-    
+
         return $this;
     }
 
     /**
      * Get lvl
      *
-     * @return integer 
+     * @return integer
      */
     public function getLvl()
     {
@@ -331,14 +334,14 @@ class Item extends Base\Item
     public function setUserId($userId)
     {
         $this->user_id = $userId;
-    
+
         return $this;
     }
 
     /**
      * Get user_id
      *
-     * @return integer 
+     * @return integer
      */
     public function getUserId()
     {
@@ -354,14 +357,14 @@ class Item extends Base\Item
     public function setPosition($position)
     {
         $this->position = $position;
-    
+
         return $this;
     }
 
     /**
      * Get position
      *
-     * @return integer 
+     * @return integer
      */
     public function getPosition()
     {
@@ -377,14 +380,14 @@ class Item extends Base\Item
     public function setSlug($slug)
     {
         $this->slug = $slug;
-    
+
         return $this;
     }
 
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -400,14 +403,14 @@ class Item extends Base\Item
     public function setCreatedAt($createdAt)
     {
         $this->created_at = $createdAt;
-    
+
         return $this;
     }
 
     /**
      * Get created_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -423,14 +426,14 @@ class Item extends Base\Item
     public function setUpdatedAt($updatedAt)
     {
         $this->updated_at = $updatedAt;
-    
+
         return $this;
     }
 
     /**
      * Get updated_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -446,7 +449,7 @@ class Item extends Base\Item
     public function addChildren(\Zorbus\MenuBundle\Entity\Item $children)
     {
         $this->children[] = $children;
-    
+
         return $this;
     }
 
@@ -463,7 +466,7 @@ class Item extends Base\Item
     /**
      * Get children
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getChildren()
     {
@@ -479,14 +482,14 @@ class Item extends Base\Item
     public function setMenu(\Zorbus\MenuBundle\Entity\Menu $menu = null)
     {
         $this->menu = $menu;
-    
+
         return $this;
     }
 
     /**
      * Get menu
      *
-     * @return Zorbus\MenuBundle\Entity\Menu 
+     * @return Zorbus\MenuBundle\Entity\Menu
      */
     public function getMenu()
     {
@@ -502,17 +505,53 @@ class Item extends Base\Item
     public function setParent(\Zorbus\MenuBundle\Entity\Item $parent = null)
     {
         $this->parent = $parent;
-    
+
         return $this;
     }
 
     /**
      * Get parent
      *
-     * @return Zorbus\MenuBundle\Entity\Item 
+     * @return Zorbus\MenuBundle\Entity\Item
      */
     public function getParent()
     {
         return $this->parent;
     }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function preImageUpload()
+    {
+        if (null !== $this->imageTemp)
+        {
+            $this->image = sha1(uniqid(mt_rand(), true)) . '.' . $this->imageTemp->guessExtension();
+        }
+    }
+
+    /**
+     * @ORM\PostRemove
+     */
+    public function postRemove()
+    {
+        if ($file = $this->getAbsolutePath($this->image))
+        {
+            @unlink($file);
+        }
+    }
+
+    /**
+     * @ORM\PostPersist
+     */
+    public function postImageUpload()
+    {
+        if ($this->imageTemp instanceof \Symfony\Component\HttpFoundation\File\UploadedFile)
+        {
+            $this->imageTemp->move($this->getUploadRootDir(), $this->image);
+
+            unset($this->imageTemp);
+        }
+    }
+
 }
