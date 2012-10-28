@@ -13,11 +13,6 @@ class Menu extends Base\Menu
     private $id;
 
     /**
-     * @var string $identifier
-     */
-    private $identifier;
-
-    /**
      * @var string $title
      */
     private $title;
@@ -64,38 +59,15 @@ class Menu extends Base\Menu
     {
         $this->items = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set identifier
-     *
-     * @param string $identifier
-     * @return Menu
-     */
-    public function setIdentifier($identifier)
-    {
-        $this->identifier = $identifier;
-    
-        return $this;
-    }
-
-    /**
-     * Get identifier
-     *
-     * @return string 
-     */
-    public function getIdentifier()
-    {
-        return $this->identifier;
     }
 
     /**
@@ -107,14 +79,14 @@ class Menu extends Base\Menu
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -130,14 +102,14 @@ class Menu extends Base\Menu
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -153,14 +125,14 @@ class Menu extends Base\Menu
     public function setLang($lang)
     {
         $this->lang = $lang;
-    
+
         return $this;
     }
 
     /**
      * Get lang
      *
-     * @return string 
+     * @return string
      */
     public function getLang()
     {
@@ -176,14 +148,14 @@ class Menu extends Base\Menu
     public function setSlug($slug)
     {
         $this->slug = $slug;
-    
+
         return $this;
     }
 
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
@@ -199,14 +171,14 @@ class Menu extends Base\Menu
     public function setEnabled($enabled)
     {
         $this->enabled = $enabled;
-    
+
         return $this;
     }
 
     /**
      * Get enabled
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getEnabled()
     {
@@ -222,14 +194,14 @@ class Menu extends Base\Menu
     public function setCreatedAt($createdAt)
     {
         $this->created_at = $createdAt;
-    
+
         return $this;
     }
 
     /**
      * Get created_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -245,14 +217,14 @@ class Menu extends Base\Menu
     public function setUpdatedAt($updatedAt)
     {
         $this->updated_at = $updatedAt;
-    
+
         return $this;
     }
 
     /**
      * Get updated_at
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -268,7 +240,7 @@ class Menu extends Base\Menu
     public function addItem(\Zorbus\MenuBundle\Entity\Item $items)
     {
         $this->items[] = $items;
-    
+
         return $this;
     }
 
@@ -285,7 +257,7 @@ class Menu extends Base\Menu
     /**
      * Get items
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getItems()
     {

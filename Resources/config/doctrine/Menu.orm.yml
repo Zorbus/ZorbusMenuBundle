@@ -7,10 +7,6 @@ Zorbus\MenuBundle\Entity\Menu:
             type: integer
             generator: { strategy: AUTO }
     fields:
-        identifier:
-            type: string
-            length: 255
-            nullable: false
         title:
             type: string
             length: 255
