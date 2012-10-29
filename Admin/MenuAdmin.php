@@ -13,7 +13,7 @@ class MenuAdmin extends Admin
     {
         $formMapper
             ->add('title')
-            ->add('description')
+            ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
             ->add('lang')
             ->add('enabled', null, array('required' => false))
         ;

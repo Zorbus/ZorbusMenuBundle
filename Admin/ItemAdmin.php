@@ -16,7 +16,7 @@ class ItemAdmin extends Admin
             ->add('url')
             ->add('menu')
             ->add('parent', null, array('required' => false))
-            ->add('description')
+            ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
             ->add('imageTemp', 'file', array('required' => false, 'label' => 'Image'))
             ->add('enabled', null, array('required' => false))
         ;
