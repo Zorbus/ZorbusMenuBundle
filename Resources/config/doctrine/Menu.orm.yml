@@ -13,6 +13,7 @@ Zorbus\MenuBundle\Entity\Menu:
             nullable: false
         description:
             type: text
+            nullable: true
         lang:
             type: string
             length: 5
