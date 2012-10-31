@@ -14,9 +14,9 @@ class ItemAdmin extends Admin
         $formMapper
             ->add('name')
             ->add('url')
-            ->add('menu')
-            ->add('parent', null, array('required' => false))
-            ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
+            ->add('menu', null, array('required' => true, 'attr' => array('class' => 'span5 select2')))
+            ->add('parent', null, array('required' => false, 'attr' => array('class' => 'span5 select2')))
+            ->add('description', 'textarea', array('required' => false, 'attr' => array('class' => 'ckeditor')))
             ->add('imageTemp', 'file', array('required' => false, 'label' => 'Image'))
             ->add('enabled', null, array('required' => false))
         ;
@@ -45,7 +45,15 @@ class ItemAdmin extends Admin
     {
         $errorElement
             ->with('name')
+                ->assertNotBlank()
                 ->assertMaxLength(array('limit' => 255))
+            ->end()
+            ->with('url')
+                ->assertNotBlank()
+                ->assertMaxLength(array('limit' => 255))
+            ->end()
+            ->with('menu')
+                ->assertNotBlank()
             ->end()
         ;
     }
