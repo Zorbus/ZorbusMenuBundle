@@ -1,10 +1,10 @@
 <?php
 
-namespace MomZone\BlockBundle\Controller;
+namespace Zorbus\MenuBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class MenuController extends Controller
+class BlockController extends Controller
 {
 
     public function defaultAction($block)
