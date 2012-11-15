@@ -8,7 +8,7 @@ parameters:
     zorbus_menu.menu.controller.class: SonataAdminBundle:CRUD
     zorbus_menu.item.controller.class: SonataAdminBundle:CRUD
 
-    zorbus_block.service.menu.class: Zorbus\MenuBundle\Model\BlockMenuConfig
+    zorbus_menu.block.menu.class: Zorbus\MenuBundle\Model\BlockMenuConfig
 
 services:
     zorbus_menu.menu.admin:
@@ -25,8 +25,8 @@ services:
             - [setTranslationDomain, [MenuBundle]]
         tags:
             - { name: sonata.admin, manager_type: orm, group: Menus, label: Items }
-    zorbus_block.service.menu:
-        class: %zorbus_block.service.menu.class%
+    zorbus_menu.block.menu:
+        class: %zorbus_menu.block.menu.class%
         scope: prototype
         arguments: ['@zorbus_block.block.admin', '@form.factory', '@http_kernel']
         tags:
