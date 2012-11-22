@@ -15,14 +15,14 @@ services:
         class: %zorbus_menu.menu.admin.class%
         arguments: [~, %zorbus_menu.menu.entity.class%, %zorbus_menu.menu.controller.class%]
         calls:
-            - [setTranslationDomain, [MenuBundle]]
+            - [setTranslationDomain, [ZorbusMenuBundle]]
         tags:
             - { name: sonata.admin, manager_type: orm, group: Menus, label: Menus }
     zorbus_menu.item.admin:
         class: %zorbus_menu.item.admin.class%
         arguments: [~, Zorbus\MenuBundle\Entity\Item, %zorbus_menu.item.controller.class%]
         calls:
-            - [setTranslationDomain, [MenuBundle]]
+            - [setTranslationDomain, [ZorbusMenuBundle]]
         tags:
             - { name: sonata.admin, manager_type: orm, group: Menus, label: Items }
     zorbus_menu.block.menu:
