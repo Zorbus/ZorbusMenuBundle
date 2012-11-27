@@ -30,4 +30,4 @@ services:
         scope: prototype
         arguments: ['@zorbus_block.block.admin', '@form.factory', '@http_kernel']
         tags:
-            - { name: zorbus_block.block, category: Menus }
+            - { name: zorbus_block.block, category: Menu }
