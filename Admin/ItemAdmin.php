@@ -71,6 +71,7 @@ class ItemAdmin extends Admin
                 ->addIdentifier('name')
                 ->addIdentifier('menu')
                 ->addIdentifier('parent')
+                ->add('position')
                 ->add('enabled')
         ;
     }
