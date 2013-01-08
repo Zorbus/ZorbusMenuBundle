@@ -91,6 +91,8 @@ Zorbus\MenuBundle\Entity\Item:
                 name: menu_id
                 referencedColumnName: id
                 onDelete: CASCADE
+            gedmo:
+                - sortableGroup
         parent:
             targetEntity: Zorbus\MenuBundle\Entity\Item
             inversedBy: children

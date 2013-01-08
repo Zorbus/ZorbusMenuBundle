@@ -51,6 +51,7 @@ class ItemAdmin extends Admin
                         new Image()
                     )
                 ))
+                ->add('position', null, array('required' => false))
                 ->add('enabled', null, array('required' => false))
         ;
     }
