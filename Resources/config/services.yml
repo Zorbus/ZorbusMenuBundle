@@ -28,6 +28,6 @@ services:
     zorbus_menu.block.menu:
         class: %zorbus_menu.block.menu.class%
         scope: prototype
-        arguments: ['@zorbus_block.block.admin', '@form.factory', '@http_kernel']
+        arguments: ['@zorbus_block.block.admin', '@form.factory', '@http_kernel', '@doctrine.orm.entity_manager']
         tags:
             - { name: zorbus_block.block, category: Menu }

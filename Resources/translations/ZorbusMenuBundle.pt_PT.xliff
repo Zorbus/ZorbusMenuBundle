@@ -67,16 +67,16 @@
                 <target>Posição</target>
             </trans-unit>
             <trans-unit id="17">
-                <source></source>
-                <target></target>
+                <source>Menu List</source>
+                <target>Listar menus</target>
             </trans-unit>
             <trans-unit id="18">
-                <source></source>
-                <target></target>
+                <source>Item List</source>
+                <target>Listar itens</target>
             </trans-unit>
             <trans-unit id="19">
-                <source></source>
-                <target></target>
+                <source>Item Create</source>
+                <target>Criar item</target>
             </trans-unit>
             <trans-unit id="20">
                 <source></source>
