@@ -1,6 +1,6 @@
 <?php
 
-namespace Zorbus\ZorbusBundle\Model\Menu\Base;
+namespace Zorbus\MenuBundle\Model\Base;
 
 use Zorbus\BlockBundle\Model\BlockConfig;
 
